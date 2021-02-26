@@ -10,10 +10,10 @@ export default class App extends Component {
     this.state = {
       date: '',
       quantity: '',
-      price: '', 
+      price: ''
     }
   }
-  
+
   changeHandler = (e) => {
     this.setState({[e.target.name] : e.target.value})
   }
@@ -26,6 +26,7 @@ export default class App extends Component {
     .then(response => {
       console.log(response);
     })
+    this.setState({ date: '', quantity: '', price: ''})
   }
 
   render() {
