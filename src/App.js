@@ -7,9 +7,6 @@ export default class App extends Component {
   constructor(props) {
     super(props)
 
-    var newDate = new Date(),
-      today = newDate.getFullYear() + '-' + (newDate.getMonth() + 1) + '-' + newDate;
-
     this.state = {
       date: '',
       quantity: '',
