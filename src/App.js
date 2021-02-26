@@ -7,10 +7,13 @@ export default class App extends Component {
   constructor(props) {
     super(props)
 
+    var newDate = new Date(),
+      today = newDate.getFullYear() + '-' + (newDate.getMonth() + 1) + '-' + newDate;
+
     this.state = {
+      date: '',
       quantity: '',
       price: '', 
-      date: ''
     }
   }
   
@@ -29,11 +32,11 @@ export default class App extends Component {
   }
 
   render() {
-    const { quantity, price, date } = this.state;
+    const { date, quantity, price } = this.state;
     
     return (
       <Container fluid className="container">
-        <Header as='h2'>PJ's Egg Tracker. It's EGG-cellent!</Header>
+        <Header as='h2'>EJ's EGG-cellent Egg Tracker</Header>
         <Form className="form" onSubmit={this.submitHandler}>
           <Form.Field>
             <label>Quantity Sold</label>
@@ -45,9 +48,8 @@ export default class App extends Component {
           </Form.Field>
           <Form.Field>
             <label>Date</label>
-            <input placeholder='Enter the date of sale' type="text" name="date" value={date} onChange={this.changeHandler} />
+            <input placeholder='Enter the date of sale' type="date" name="date" value={date} onChange={this.changeHandler} />
           </Form.Field>
-          
           <Button color="blue" type='submit'>Submit</Button>
         </Form>
       </Container>
