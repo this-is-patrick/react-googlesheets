@@ -18,6 +18,7 @@ export default class App extends Component {
     this.setState({[e.target.name] : e.target.value})
   }
   
+  //This is a comment
   submitHandler = e => {
     e.preventDefault();
     console.log(this.state);
